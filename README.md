@@ -40,3 +40,7 @@ scripts/hooks/    the name guard as a local pre-commit hook
 3. Check the live headers: `curl -sI https://projectcampus.org/ | grep -i -e content-security -e robots`.
 
 Before it goes live, run the campus-review skill on the page.
+
+## Licence
+
+Code is under the [MIT License](LICENSE). Writing and pictures are under [CC BY 4.0](LICENSE-CONTENT.md), which says which files are which. Copyright © 2026 Leo M. Subingsubing (D-159).
