@@ -13,7 +13,7 @@ This repository is the landing page of Project CAMPUS (D-154). It is built from 
 - Name stakeholders or describe private conversations (D-030).
 - Name or link a community-run Facebook page or group (D-044), or open any Meta site (D-041).
 - Use the retired expansion of the name (D-040).
-- Add a script, form, web font, or anything loaded from another site.
+- Add a script, form, or anything loaded from another site. The only fonts are the copies in `fonts/` (D-160).
 
 ## Before you push
 

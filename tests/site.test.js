@@ -29,7 +29,11 @@ const NOTICE = "Not affiliated with Visayas State University";
 // Addresses this page may link to. The interactive site is not among them
 // until Q-71 settles how students reach it only after the survey (D-084, D-154),
 // and the survey is not among them until it opens (D-114).
-const ALLOWED_LINKS = [/^https:\/\/docs\.projectcampus\.org\//, /^https:\/\/github\.com\/Ywcxz\/projectcampus-docs$/];
+const ALLOWED_LINKS = [
+  /^https:\/\/docs\.projectcampus\.org\//,
+  /^https:\/\/github\.com\/Ywcxz\/projectcampus-docs$/,
+  /^https:\/\/github\.com\/Ywcxz\/projectcampus\.org$/,
+];
 const ALLOWED_DECISION = /^https:\/\/docs\.projectcampus\.org\/decisions\.html#[dq]-\d{3}$|^https:\/\/docs\.projectcampus\.org\/decisions\.html#q-\d{2}$/;
 
 for (const page of PAGES) {
@@ -51,10 +55,16 @@ for (const page of PAGES) {
   check(!/explore\.projectcampus\.org/i.test(html.replace(/<!--[\s\S]*?-->/g, "")), `${page}: does not link or name the interactive site's address before Q-71 is settled (D-154)`);
   check(!/survey\.projectcampus\.org|vsurvey.*vercel\.app/i.test(html), `${page}: does not link the survey before it opens (D-114)`);
 
-  // Every claim line carries a tag and at least one source.
-  for (const m of html.matchAll(/<p class="claim">([\s\S]*?)<\/p>/g)) {
-    check(/class="tag tag-(est|pro|unr)"/.test(m[1]) && /class="src"/.test(m[1]), `${page}: every claim has a tag and a source`);
+  // Every claim carries a tag and at least one source, and every tag outside
+  // the legend belongs to a claim (D-148, D-156).
+  const claims = [...html.matchAll(/<(p|small) class="claim">([\s\S]*?)<\/\1>/g)].map((m) => m[2]);
+  for (const c of claims) {
+    check(/class="tag tag-(est|pro|unr)"/.test(c) && /class="src"/.test(c), `${page}: every claim has a tag and a source`);
   }
+  const outsideLegend = html.replace(/<dl class="legend">[\s\S]*?<\/dl>/g, "");
+  const tags = (outsideLegend.match(/class="tag tag-/g) || []).length;
+  const claimed = claims.reduce((n, c) => n + (c.match(/class="tag tag-/g) || []).length, 0);
+  check(tags === claimed, `${page}: every tag sits in a claim with its source (${tags - claimed} loose)`);
 }
 
 check(!ALL.some((f) => /seal|logo/i.test(path.basename(f))), "no file is named as a seal or logo (D-148)");
@@ -68,15 +78,35 @@ const vercel = JSON.parse(read("vercel.json"));
 const all = vercel.headers.find((h) => h.source === "/(.*)").headers;
 const csp = all.find((h) => h.key === "Content-Security-Policy").value;
 check(/default-src 'none'/.test(csp) && !/script-src/.test(csp), "the security policy allows no script");
+check(/font-src 'self'(;|$)/.test(csp) && !/https?:/.test(csp), "the security policy allows fonts from this site only");
 check(all.some((h) => h.key === "Referrer-Policy" && h.value === "no-referrer"), "no referrer is sent");
 check(all.some((h) => h.key === "X-Robots-Tag" && /noindex/.test(h.value)), "the header keeps the page out of search results");
 
 // Every local file a page refers to exists, and the CSS key matches across pages.
 for (const page of PAGES) {
-  for (const m of read(page).matchAll(/(?:href|src)="((?:css|img)\/[^"?]+|favicon\.ico)/g)) {
+  for (const m of read(page).matchAll(/(?:href|src)="((?:css|img|fonts)\/[^"?]+|favicon\.ico)/g)) {
     check(fs.existsSync(path.join(ROOT, m[1])), `${page}: ${m[1]} exists`);
   }
 }
+// The stylesheets load only this site's own files: the bundled fonts (D-160),
+// each with its licence beside it, and nothing by @import.
+for (const css of ALL.filter((f) => f.endsWith(".css"))) {
+  const text = read(css);
+  check(!/@import/i.test(text), `${css}: imports nothing`);
+  for (const m of text.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/g)) {
+    const ref = m[1];
+    check(!/^(https?:)?\/\//i.test(ref) && !/^data:/i.test(ref), `${css}: ${ref} is one of this site's own files`);
+    if (!/^(https?:)?\/\//i.test(ref)) check(fs.existsSync(path.join(ROOT, path.dirname(css), ref)), `${css}: ${ref} exists`);
+  }
+}
+const fontFiles = ALL.filter((f) => f.startsWith("fonts" + path.sep));
+check(fontFiles.filter((f) => !/\.(woff2|txt)$/.test(f)).length === 0, "fonts/ holds only .woff2 files and their licences");
+for (const [family, licence] of [["newsreader-", "OFL-Newsreader.txt"], ["ibm-plex-sans-", "OFL-IBM-Plex-Sans.txt"], ["ibm-plex-mono-", "OFL-IBM-Plex-Mono.txt"]]) {
+  if (fontFiles.some((f) => path.basename(f).startsWith(family))) {
+    check(fontFiles.includes(path.join("fonts", licence)) && /SIL Open Font License/.test(read(path.join("fonts", licence))), `fonts/${licence} ships beside the ${family.slice(0, -1)} files`);
+  }
+}
+
 const keys = new Set(PAGES.flatMap((p) => [...read(p).matchAll(/\.css\?v=([\w.]+)/g)].map((m) => m[1])));
 check(keys.size === 1, `every page uses the same ?v= key (found ${[...keys].join(", ") || "none"})`);
 
