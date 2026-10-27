@@ -1,0 +1,6 @@
+{
+  "name": "projectcampus-landing-tests",
+  "private": true,
+  "description": "Checks the landing page's rules: notice, no scripts or forms, links, tags, headers.",
+  "scripts": { "test": "node site.test.js" }
+}
