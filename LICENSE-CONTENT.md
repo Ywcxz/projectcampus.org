@@ -10,9 +10,11 @@ Copyright © 2026 Leo M. Subingsubing.
 ## What is under CC BY 4.0
 
 - the text of `index.html`;
-- the images in `img/` and `favicon.ico`, including the project's icon.
+- the images in `img/` and `favicon.ico`, including the project's icon and the link preview card.
 
 The code, `css/`, `tests/`, `scripts/`, `.github/`, `vercel.json`, and the HTML structure of `index.html`, is under the MIT License.
+
+The fonts in `fonts/` are neither: Newsreader, by the Newsreader Project Authors, and IBM Plex Sans and IBM Plex Mono, by IBM, are under the SIL Open Font License 1.1, in `fonts/OFL-*.txt`.
 
 ## Credit
 

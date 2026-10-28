@@ -7,13 +7,14 @@ This repository is the landing page of Project CAMPUS (D-154). It is built from 
 - Read the live `index.html` and the master doc rows and chapters a claim rests on, at main. Never write a claim from memory or from a brief alone.
 - A new claim goes into the master doc before it goes on this page.
 - Don't link the interactive site until Q-71 is settled, or the survey until it opens (D-084, D-114, D-154). The test enforces both.
+- No claim tags or register IDs on the page (D-161). Let the wording say what is proposed, and link the chapter instead.
 
 ## Never
 
 - Name stakeholders or describe private conversations (D-030).
 - Name or link a community-run Facebook page or group (D-044), or open any Meta site (D-041).
 - Use the retired expansion of the name (D-040).
-- Add a script, form, web font, or anything loaded from another site.
+- Add a script, form, or anything loaded from another site. The only fonts are the copies in `fonts/` (D-160).
 
 ## Before you push
 
