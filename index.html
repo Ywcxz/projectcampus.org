@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#151B17" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=0.2.0">
+<link rel="stylesheet" href="css/site.css?v=0.2.1">
 </head>
 <body>
 
@@ -45,19 +45,15 @@
     <p class="eyebrow">Concept and research stage &middot; October 2026</p>
     <h1 id="title">Project CAMPUS</h1>
     <p class="subtitle">Connecting All Members, Places, and University Services</p>
-    <p class="lead">A different approach to digital transformation at Visayas State University: a digital layer over the physical university that connects its people, places, knowledge, and services, designed around VSU's own culture, values, policies, geography, and people. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></p>
-    <p class="byline">Prepared by Leo M. Subingsubing, Visayas State University Main Campus alumnus</p>
+    <p class="lead">A different approach to digital transformation at Visayas State University: a digital layer that connects its people, places, knowledge, and services. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></p>
+    <p class="stage">By Leo M. Subingsubing, a VSU alumnus. No VSU office has reviewed or endorsed it, and no field research has been run yet. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></p>
     <div class="actions">
       <a class="btn btn-primary" href="https://docs.projectcampus.org/">Read the proposal <span aria-hidden="true">&rarr;</span></a>
-      <a class="btn" href="#ideas">What it proposes <span aria-hidden="true">&darr;</span></a>
     </div>
   </section>
 
-  <section class="wrap section" id="ideas" aria-labelledby="h-ideas">
-    <p class="eyebrow">What it proposes</p>
-    <h2 id="h-ideas">A network for VSU's people, and a campus intranet beneath it</h2>
-    <p class="section-lead">One product, the social/academic network, with the campus intranet as its long-term infrastructure. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-098">D-098</a></small></p>
-
+  <section class="wrap section" aria-labelledby="h-ideas">
+    <h2 id="h-ideas">What it proposes</h2>
     <div class="ideas">
       <article class="idea" aria-labelledby="h-network">
         <svg class="idea-art art-network" viewBox="0 0 320 112" aria-hidden="true" focusable="false">
@@ -75,16 +71,8 @@
         </svg>
         <p class="idea-kind">The one product</p>
         <h3 id="h-network">A social/academic network</h3>
-        <p>VSU's own online space for students, faculty, staff, and offices: academic at its core, with organizations, events, and campus life around it. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-101">D-101</a></small></p>
-        <ul class="points">
-          <li><strong>Routing.</strong> A question reaches someone who can answer it.</li>
-          <li><strong>Memory.</strong> A confirmed answer stays, dated and findable, for the next batch.</li>
-          <li><strong>Trust.</strong> A notice shows who stands behind it, and whether it still holds.</li>
-        </ul>
-        <p class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/social-network.html">Ch 3</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-063">D-063</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-070">D-070</a></p>
-        <p class="idea-note">Requests, course work, and grades stay in VSU's own systems, and the network helps people find them. It has no ads and no feed built to hold attention: it is judged by questions answered and answers reused, never by time spent. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-064">D-064</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-035">D-035</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-061">D-061</a></small></p>
+        <p>VSU's own online space for students, faculty, staff, and offices, where questions reach someone who can answer and answers stay findable. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-101">D-101</a> <a class="src" href="https://docs.projectcampus.org/social-network.html">Ch 3</a></small></p>
       </article>
-
       <article class="idea" aria-labelledby="h-intranet">
         <svg class="idea-art art-rings" viewBox="0 0 320 112" aria-hidden="true" focusable="false">
           <circle class="ring ring-4" cx="160" cy="100" r="92"/>
@@ -99,89 +87,27 @@
         </svg>
         <p class="idea-kind">Long-term infrastructure</p>
         <h3 id="h-intranet">A campus intranet</h3>
-        <p>What VSU makes would live on VSU's own network first, with the wider internet as the outer ring, so campus services keep working on campus when the internet link fails.</p>
-        <ol class="rings">
-          <li><span class="swatch swatch-1" aria-hidden="true"></span><strong>Device</strong><span>what each phone or laptop keeps</span></li>
-          <li><span class="swatch swatch-2" aria-hidden="true"></span><strong>Campus</strong><span>VSU's servers, fiber, and Wi-Fi</span></li>
-          <li><span class="swatch swatch-3" aria-hidden="true"></span><strong>VSU-wide</strong><span>the other campuses and offices</span></li>
-          <li><span class="swatch swatch-4" aria-hidden="true"></span><strong>Internet</strong><span>everything outside</span></li>
-        </ol>
-        <p class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/intranet.html">Ch 2</a></p>
-        <p>It builds on what VSU already runs: a fiber backbone, Wi-Fi across most of the Main Campus, and a typhoon-hardened data center. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/intranet.html">Ch 2</a></small></p>
-        <p class="idea-note">A direction offered to VSU ICT and the DIGITS program, not a request: CAMPUS asks VSU to build, fund, or host nothing here. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-022">D-022</a></small></p>
+        <p>What VSU makes lives on VSU's own network first, so campus services keep working when the internet link fails. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/intranet.html">Ch 2</a></small> A direction for VSU ICT, not a request. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-022">D-022</a></small></p>
       </article>
     </div>
-
-    <div class="further">
-      <p><strong>Further out.</strong> A digital twin, a living model of the campus. Its first step would be finding places and knowing which office handles what; everything beyond that is research only. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-079">D-079</a> <a class="src" href="https://docs.projectcampus.org/digital-twin.html">Ch 4</a></small></p>
-      <p><strong>Later modules.</strong> A marketplace, housing near campus, and delivery. Each waits for its own evidence, and none is part of the network's first version. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-098">D-098</a></small></p>
-    </div>
-  </section>
-
-  <section class="wrap section" aria-labelledby="h-stands">
-    <p class="eyebrow">Where it stands</p>
-    <h2 id="h-stands">An early, independent proposal</h2>
-    <dl class="ledger">
-      <div>
-        <dt>Who</dt>
-        <dd>Led full-time by one person, a VSU Main Campus alumnus. There is no team, partner, or institutional collaboration. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></dd>
-      </div>
-      <div>
-        <dt>VSU</dt>
-        <dd>No VSU office has reviewed, endorsed, approved, funded, or adopted CAMPUS. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></dd>
-      </div>
-      <div>
-        <dt>Evidence</dt>
-        <dd>No field research has been run yet, so every problem CAMPUS addresses is still a hypothesis. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></dd>
-      </div>
-      <div>
-        <dt>First build</dt>
-        <dd>A small prototype of the network, on made-up data, which needs nothing from VSU. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-099">D-099</a></small></dd>
-      </div>
-      <div>
-        <dt>First approach</dt>
-        <dd>A concept note to the Office of the Vice President for Student Affairs and Services, with two separate asks: permission to run the student survey and interviews, and interest in CAMPUS. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-083">D-083</a></small></dd>
-      </div>
-    </dl>
   </section>
 
   <section class="wrap section" aria-labelledby="h-parts">
-    <p class="eyebrow">The project</p>
-    <h2 id="h-parts">Read it, see it, take part</h2>
-
-    <aside class="student-note" aria-labelledby="h-student">
-      <h3 id="h-student">VSU student?</h3>
-      <p>Once it opens, the student survey asks about your own time at VSU. If you might take it, please answer it before you read more of the proposal, so your answers are about your experience and not about the proposal.</p>
-    </aside>
-
+    <h2 id="h-parts">Explore</h2>
     <ul class="doors">
       <li class="door door-open">
-        <div class="door-head">
-          <span class="door-n">01</span>
-          <span class="status status-open">Open to read</span>
-        </div>
-        <h3>The master document</h3>
-        <p>The full proposal: its chapters, sources, evidence, and every decision, each tagged. It is the reference: what people read, this page included, is built from it and points back to it. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-082">D-082</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-156">D-156</a></small></p>
-        <p class="door-action"><a class="btn btn-primary" href="https://docs.projectcampus.org/">Open the document <span aria-hidden="true">&rarr;</span></a></p>
-        <p class="door-meta">docs.projectcampus.org &middot; <a href="https://github.com/Ywcxz/projectcampus-docs">source on GitHub</a></p>
+        <div class="door-head"><h3>The master document</h3><span class="status status-open">Open</span></div>
+        <p>The full proposal, its evidence, and every decision.</p>
+        <p class="door-action"><a class="btn btn-primary" href="https://docs.projectcampus.org/">Read it <span aria-hidden="true">&rarr;</span></a></p>
       </li>
       <li class="door">
-        <div class="door-head">
-          <span class="door-n">02</span>
-          <span class="status status-closed">Not public yet</span>
-        </div>
-        <h3>The interactive site</h3>
-        <p>A summary of the proposal that a visitor can walk around in, still being built. It will be shown in person to VSU offices first, and students will see it after they have answered the survey. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-152">D-152</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-084">D-084</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-154">D-154</a></small></p>
-        <p class="door-meta">Linked here once it is public.</p>
+        <div class="door-head"><h3>The interactive site</h3><span class="status status-closed">Not public yet</span></div>
+        <p>A walk-through of the proposal, shown in person to VSU offices first. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-152">D-152</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-084">D-084</a></small></p>
       </li>
       <li class="door">
-        <div class="door-head">
-          <span class="door-n">03</span>
-          <span class="status status-closed">Not open yet</span>
-        </div>
-        <h3>The student survey</h3>
-        <p>About student life and VSU's services, for VSU students aged 18 and over. It is not an official VSU survey, and it asks for no name, student number, email address, or phone number. It opens once VSU's written permission to run it is in hand. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-114">D-114</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-136">D-136</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-094">D-094</a> <a class="src" href="https://docs.projectcampus.org/evidence.html">Ch 8</a> <a class="src" href="https://docs.projectcampus.org/network-proposal.html">Ch 3.4</a></small></p>
-        <p class="door-meta">Linked here once it opens.</p>
+        <div class="door-head"><h3>The student survey</h3><span class="status status-closed">Not open yet</span></div>
+        <p>For VSU students aged 18 and over. It asks for no name or contact details, and opens once VSU gives permission. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-114">D-114</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-094">D-094</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-136">D-136</a></small></p>
+        <p class="door-note">VSU student? Please answer it before you read the proposal.</p>
       </li>
     </ul>
   </section>
@@ -192,13 +118,12 @@
   <div class="wrap">
     <p class="notice">An independent proposal by one alumnus. Not affiliated with Visayas State University.</p>
     <dl class="legend">
-      <div><dt><span class="tag tag-est">Established</span></dt><dd>Supported by documents, completed work, or a recorded decision.</dd></div>
-      <div><dt><span class="tag tag-pro">Proposed</span></dt><dd>A design idea or hypothesis that has not been validated.</dd></div>
-      <div><dt><span class="tag tag-unr">Unresolved</span></dt><dd>An open question, or a claim nobody has verified yet.</dd></div>
+      <div><dt><span class="tag tag-est">Established</span></dt><dd>backed by a document or recorded decision</dd></div>
+      <div><dt><span class="tag tag-pro">Proposed</span></dt><dd>an idea not yet tested</dd></div>
+      <div><dt><span class="tag tag-unr">Unresolved</span></dt><dd>an open question</dd></div>
     </dl>
-    <p>Links such as D-099 open the row of the master document's decision register that a claim rests on. This page summarizes the <a href="https://docs.projectcampus.org/">master document</a>, which wins wherever the two differ. Checked against it on 27 October 2026.</p>
-    <p>This page collects nothing: no forms, accounts, cookies, or tracking.</p>
-    <p>&copy; 2026 Leo M. Subingsubing. Text under CC BY 4.0, code under the MIT License (<a href="https://github.com/Ywcxz/projectcampus.org">source</a>). Set in Newsreader and IBM Plex, under the SIL Open Font License.</p>
+    <p>Each tag links the part of the <a href="https://docs.projectcampus.org/">master document</a> it rests on; the master document wins wherever the two differ. Checked against it on 28 October 2026.</p>
+    <p>This page collects nothing. &copy; 2026 Leo M. Subingsubing &middot; text CC BY 4.0, code MIT (<a href="https://github.com/Ywcxz/projectcampus.org">source</a>) &middot; fonts under the SIL Open Font License.</p>
   </div>
 </footer>
 

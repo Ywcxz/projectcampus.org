@@ -153,7 +153,7 @@ strong { font-weight: 500; }
   color: var(--green); margin: .6rem 0 1.5rem;
 }
 .lead { font-size: 1.125rem; line-height: 1.6; max-width: var(--measure); margin: 0 0 1.25rem; }
-.byline { font: 500 .78rem/1.5 var(--font-mono); color: var(--ink-3); margin: 0 0 1.75rem; }
+.stage { font-size: .92rem; color: var(--ink-2); max-width: var(--measure); margin: 0 0 1.75rem; }
 
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
 .btn {
@@ -169,8 +169,7 @@ strong { font-weight: 500; }
 /* ---------- sections ---------- */
 
 .section { padding-top: 4rem; }
-.section h2 { font-size: clamp(1.65rem, 6vw, 2.35rem); line-height: 1.15; max-width: 34rem; margin-bottom: .9rem; }
-.section-lead { font-size: 1.05rem; color: var(--ink-2); max-width: var(--measure); margin: 0 0 1.75rem; }
+.section h2 { font-size: clamp(1.65rem, 6vw, 2.35rem); line-height: 1.15; margin-bottom: 1.25rem; }
 
 /* ---------- tags and sources, as the master doc stamps them ---------- */
 
@@ -203,31 +202,7 @@ p.claim { margin: .35rem 0 0; }
   color: var(--green); margin: 0 0 .3rem;
 }
 .idea h3 { font-size: 1.55rem; line-height: 1.2; margin-bottom: .6rem; }
-.idea p { margin: 0 0 .75rem; }
-.idea p.claim { margin: -.35rem 0 .9rem; }
-.idea-note { font-size: .92rem; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: .85rem; margin-bottom: 0 !important; }
-
-.points { list-style: none; margin: 0 0 .75rem; padding: 0; }
-.points li { padding: .45rem 0 .45rem 1rem; border-top: 1px solid var(--rule); position: relative; }
-.points li::before {
-  content: ""; position: absolute; left: 0; top: 1.05rem;
-  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
-}
-
-.rings { list-style: none; margin: 0 0 .75rem; padding: 0; display: grid; gap: .1rem; }
-.rings li {
-  display: grid; grid-template-columns: 12px 5rem 1fr; align-items: baseline; gap: 0 .55rem;
-  font-size: .95rem; line-height: 1.5; color: var(--ink-2); padding: .1rem 0;
-}
-.rings strong { color: var(--ink); }
-.swatch {
-  width: 12px; height: 12px; border-radius: 50%;
-  align-self: start; margin-top: .35rem; border: 2px solid var(--green);
-}
-.swatch-1 { background: var(--gold); border-color: var(--gold); }
-.swatch-3 { border-style: dashed; }
-.swatch-4 { border: 2px dotted var(--sea); }
-
+.idea p { margin: 0; }
 /* The drawings: a question routed to an office that keeps the answer,
    and the four rings, each working when those outside it fail. */
 .art-network .edges path { fill: none; stroke: var(--rule-2); stroke-width: 1.5; }
@@ -244,31 +219,7 @@ p.claim { margin: .35rem 0 0; }
 .art-rings .ring-1 { fill: var(--gold); }
 .art-rings .sites circle { fill: var(--paper); stroke: var(--ink-3); stroke-width: 1.5; }
 
-.further {
-  display: grid; gap: .25rem 2rem; margin-top: 1.25rem;
-  font-size: .95rem; color: var(--ink-2);
-}
-.further p { margin: 0; padding: .85rem 0; border-top: 1px solid var(--rule); }
-.further strong { color: var(--ink); }
-
-/* ---------- where it stands ---------- */
-
-.ledger { margin: 0; border-top: 1px solid var(--rule); max-width: 52rem; }
-.ledger > div { padding: .85rem 0; border-bottom: 1px solid var(--rule); }
-.ledger dt {
-  font: 500 .7rem/1.5 var(--font-mono); letter-spacing: .08em; text-transform: uppercase;
-  color: var(--ink-3); margin-bottom: .2rem;
-}
-.ledger dd { margin: 0; }
-
 /* ---------- the parts ---------- */
-
-.student-note {
-  background: var(--sea-bg); border-left: 3px solid var(--sea); border-radius: var(--radius);
-  padding: .9rem 1.1rem; margin: 0 0 1.25rem; max-width: 52rem;
-}
-.student-note h3 { font: 500 .95rem/1.4 var(--font-body); }
-.student-note p { margin: .3rem 0 0; font-size: .95rem; }
 
 .doors { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 .door {
@@ -276,13 +227,11 @@ p.claim { margin: .35rem 0 0; }
   border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.1rem 1.15rem 1.2rem;
 }
 .door-open { background: var(--card); border-color: var(--rule-2); }
-.door-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .6rem; }
-.door-n { font: 500 .75rem/1 var(--font-mono); color: var(--ink-3); }
-.door h3 { font-size: 1.35rem; line-height: 1.25; margin-bottom: .45rem; }
+.door-head { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: .6rem; margin-bottom: .6rem; }
+.door h3 { font-size: 1.3rem; line-height: 1.25; }
+.door-note { font-size: .88rem; color: var(--sea); }
 .door p { margin: 0 0 .75rem; }
 .door-action { margin-top: auto !important; padding-top: .25rem; }
-.door-meta { font: 500 .75rem/1.5 var(--font-mono); color: var(--ink-3); margin: 0 !important; }
-.door:not(.door-open) .door-meta { margin-top: auto !important; padding-top: .5rem; }
 .status {
   font: 500 .62rem/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase;
   padding: .4rem .6rem; border-radius: 999px; white-space: nowrap;
@@ -299,18 +248,15 @@ p.claim { margin: .35rem 0 0; }
 .footer p { max-width: 46rem; margin: 0 0 .6rem; }
 .footer .notice { font-size: .85rem; color: var(--ink); font-weight: 500; margin-bottom: 1rem; }
 .legend { display: grid; gap: .4rem; margin: 0 0 1rem; }
-.legend > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; }
-.legend dt { flex: none; width: 6.5rem; }
-.legend dd { margin: 0; flex: 1 1 14rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
+.legend > div { display: flex; align-items: baseline; gap: .45rem; }
+.legend dd { margin: 0; }
 
 /* ---------- wider screens ---------- */
 
 @media (min-width: 640px) {
   :root { --gutter: 28px; }
   .hero { padding-top: 5.5rem; }
-  .ledger > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; }
-  .ledger dt { margin: .2rem 0 0; }
-  .further { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 860px) {
