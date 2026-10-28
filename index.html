@@ -22,94 +22,236 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta name="theme-color" content="#F3F4EE" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151B17" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EAEAE0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1D251F" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=0.2.1">
+<link rel="stylesheet" href="css/site.css?v=0.3.0">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to the content</a>
 
+<p class="notice-bar">An independent proposal by one alumnus. Not affiliated with Visayas State University.</p>
+
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <p class="brand"><img src="img/favicon.svg" alt="" width="26" height="26"> Project <em>CAMPUS</em></p>
-    <p class="notice">An independent proposal by one alumnus. Not affiliated with Visayas State University.</p>
+    <p class="brand"><img src="img/favicon.svg" alt="" width="28" height="28"> Project <em>CAMPUS</em></p>
+    <a class="btn btn-small" href="https://docs.projectcampus.org/">Master document</a>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="wrap hero" aria-labelledby="title">
-    <p class="eyebrow">Concept and research stage &middot; October 2026</p>
-    <h1 id="title">Project CAMPUS</h1>
-    <p class="subtitle">Connecting All Members, Places, and University Services</p>
-    <p class="lead">A different approach to digital transformation at Visayas State University: a digital layer that connects its people, places, knowledge, and services. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></p>
-    <p class="stage">By Leo M. Subingsubing, a VSU alumnus. No VSU office has reviewed or endorsed it, and no field research has been run yet. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/overview.html">Overview</a></small></p>
-    <div class="actions">
-      <a class="btn btn-primary" href="https://docs.projectcampus.org/">Read the proposal <span aria-hidden="true">&rarr;</span></a>
+  <section class="hero" aria-labelledby="title">
+    <svg class="sky" viewBox="0 0 1600 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path class="sky-links" d="M61 45L257 38 M61 45L132 187 M257 38L404 64 M257 38L279 209 M404 64L511 77 M404 64L361 194 M511 77L669 70 M669 70L833 39 M833 39L1032 105 M1032 105L1159 51 M1159 51L1374 116 M1374 116L1528 67 M1374 116L1380 221 M1528 67L1500 236 M132 187L279 209 M132 187L75 362 M279 209L361 194 M279 209L272 398 M1380 221L1500 236 M1500 236L1549 387 M75 362L121 515 M272 398L261 540 M1549 387L1467 529 M121 515L261 540 M121 515L43 650 M261 540L359 661 M1235 513L1347 547 M1235 513L1176 676 M1347 547L1467 529 M1347 547L1344 719 M1467 529L1570 653 M43 650L191 708 M191 708L359 661 M359 661L548 717 M548 717L674 679 M674 679L885 719 M885 719L1075 717 M1075 717L1176 676 M1176 676L1344 719 M1344 719L1570 653"/>
+      <circle class="sky-node tw tw1" cx="61" cy="45" r="3.5"/>
+      <circle class="sky-node" cx="257" cy="38" r="3.5"/>
+      <circle class="sky-node sky-place" cx="404" cy="64" r="5"/>
+      <circle class="sky-node tw tw2" cx="511" cy="77" r="3.5"/>
+      <circle class="sky-node" cx="669" cy="70" r="3.5"/>
+      <circle class="sky-node" cx="833" cy="39" r="3.5"/>
+      <circle class="sky-node tw tw3" cx="1032" cy="105" r="3.5"/>
+      <circle class="sky-node sky-place" cx="1159" cy="51" r="5"/>
+      <circle class="sky-node" cx="1374" cy="116" r="3.5"/>
+      <circle class="sky-node tw tw4" cx="1528" cy="67" r="3.5"/>
+      <circle class="sky-node" cx="132" cy="187" r="3.5"/>
+      <circle class="sky-node" cx="279" cy="209" r="3.5"/>
+      <circle class="sky-node sky-place tw tw1" cx="361" cy="194" r="5"/>
+      <circle class="sky-node" cx="1380" cy="221" r="3.5"/>
+      <circle class="sky-node" cx="1500" cy="236" r="3.5"/>
+      <circle class="sky-node tw tw2" cx="75" cy="362" r="3.5"/>
+      <circle class="sky-node" cx="272" cy="398" r="3.5"/>
+      <circle class="sky-node sky-place" cx="1549" cy="387" r="5"/>
+      <circle class="sky-node tw tw3" cx="121" cy="515" r="3.5"/>
+      <circle class="sky-node" cx="261" cy="540" r="3.5"/>
+      <circle class="sky-node" cx="1235" cy="513" r="3.5"/>
+      <circle class="sky-node tw tw4" cx="1347" cy="547" r="3.5"/>
+      <circle class="sky-node sky-place" cx="1467" cy="529" r="5"/>
+      <circle class="sky-node" cx="43" cy="650" r="3.5"/>
+      <circle class="sky-node tw tw1" cx="191" cy="708" r="3.5"/>
+      <circle class="sky-node" cx="359" cy="661" r="3.5"/>
+      <circle class="sky-node" cx="548" cy="717" r="3.5"/>
+      <circle class="sky-node sky-place tw tw2" cx="674" cy="679" r="5"/>
+      <circle class="sky-node" cx="885" cy="719" r="3.5"/>
+      <circle class="sky-node" cx="1075" cy="717" r="3.5"/>
+      <circle class="sky-node tw tw3" cx="1176" cy="676" r="3.5"/>
+      <circle class="sky-node" cx="1344" cy="719" r="3.5"/>
+      <circle class="sky-node sky-place" cx="1570" cy="653" r="5"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow rise r1">Concept and research stage &middot; October 2026</p>
+      <h1 id="title" class="rise r2">Project CAMPUS</h1>
+      <p class="subtitle rise r3">Connecting All Members, Places, and University Services</p>
+      <p class="lead rise r4">A proposal for a different approach to digital transformation at Visayas State University: a digital layer over the physical university that would connect its people, places, knowledge, and services.</p>
+      <div class="actions rise r5">
+        <a class="btn btn-primary" href="https://docs.projectcampus.org/">Read the proposal <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-ghost" href="#proposes">See what it proposes <span aria-hidden="true">&darr;</span></a>
+      </div>
+      <p class="byline rise r6">By Leo M. Subingsubing, a VSU Main Campus alumnus</p>
+    </div>
+    <svg class="horizon" viewBox="0 0 1600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="hz-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop class="hz-edge" offset="0"/><stop class="hz-mid" offset=".32"/><stop class="hz-top" offset=".5"/><stop class="hz-mid" offset=".68"/><stop class="hz-edge" offset="1"/>
+        </linearGradient>
+        <filter id="hz-blur" x="-5%" y="-100%" width="110%" height="300%"><feGaussianBlur stdDeviation="10"/></filter>
+      </defs>
+      <path class="hz-glow" d="M-60 200 Q800 -10 1660 200" stroke="url(#hz-gradient)" filter="url(#hz-blur)"/>
+      <path class="hz-line" d="M-60 200 Q800 -10 1660 200" stroke="url(#hz-gradient)"/>
+      <path class="hz-spark" d="M-60 200 Q800 -10 1660 200" pathLength="100"/>
+    </svg>
+  </section>
+
+  <section class="wrap section" id="proposes" aria-labelledby="h-proposes">
+    <h2 id="h-proposes">What it proposes</h2>
+    <p class="section-sub">One product, the social/academic network, with a campus intranet as its long-term infrastructure.</p>
+
+    <div class="features">
+      <article class="feature feature-network reveal">
+        <div class="feature-text">
+          <p class="kicker">The one product</p>
+          <h3><a class="card-link" href="https://docs.projectcampus.org/social-network.html">A social/academic network<span class="vh">: Chapter 3 of the master document</span></a></h3>
+          <p class="tagline">Designed so a question reaches someone who can answer, and the answer stays for the next batch.</p>
+          <p>It would be VSU's own online space for students, faculty, staff, and offices: academic at its core, with organizations, events, and campus life around it. No ads, and no feed built to hold attention.</p>
+          <ul class="offers">
+            <li>
+              <svg class="offer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="17" r="2.5"/><path d="M7.5 15.5C11 9 15 8 19.5 8"/><path d="M16 4.5 19.5 8 16 11.5"/></svg>
+              <p><strong>Routing</strong> Questions go to the office or person who can answer.</p>
+            </li>
+            <li>
+              <svg class="offer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3.5h10a1 1 0 0 1 1 1V20l-6-4-6 4V4.5a1 1 0 0 1 1-1z"/></svg>
+              <p><strong>Memory</strong> Confirmed answers stay, dated and findable.</p>
+            </li>
+            <li>
+              <svg class="offer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.6-7 9-4.1-1.4-7-4.7-7-9V6z"/><path d="M8.8 12l2.3 2.3 4.2-4.6"/></svg>
+              <p><strong>Trust</strong> Every notice shows who stands behind it, and whether it still holds.</p>
+            </li>
+          </ul>
+          <p class="more" aria-hidden="true">Read Chapter 3 <span class="arrow">&rarr;</span></p>
+        </div>
+        <figure class="feature-art">
+          <svg class="art-network" viewBox="0 0 520 340" aria-hidden="true" focusable="false">
+            <path class="n-edges" d="M78 248L160 188M78 248L150 290M78 248L98 120M160 188L238 128M160 188L250 270M160 188L98 120M238 128L322 196M238 128L180 60M238 128L262 52M238 128L340 92M322 196L432 148M322 196L250 270M322 196L372 284M340 92L432 148M340 92L262 52M340 92L452 50M432 148L468 252M432 148L452 50M150 290L250 270M250 270L372 284M372 284L468 252M98 120L180 60M180 60L262 52"/>
+            <path class="n-route" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
+            <path class="n-route-b" d="M432 148L340 92L262 52" pathLength="100"/>
+            <g class="n-nodes">
+              <circle cx="160" cy="188" r="7"/><circle cx="238" cy="128" r="7"/><circle cx="322" cy="196" r="7"/><circle cx="340" cy="92" r="7"/>
+              <circle cx="150" cy="290" r="7"/><circle cx="250" cy="270" r="7"/><circle cx="372" cy="284" r="7"/><circle cx="468" cy="252" r="7"/>
+              <circle cx="98" cy="120" r="7"/><circle cx="180" cy="60" r="7"/><circle cx="452" cy="50" r="7"/>
+            </g>
+            <path class="n-pulse n-pulse-a" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
+            <path class="n-pulse n-pulse-b" d="M432 148L340 92L262 52" pathLength="100"/>
+            <circle class="n-kept" cx="432" cy="148" r="31" pathLength="100"/>
+            <rect class="n-office" x="414" y="130" width="36" height="36" rx="9"/>
+            <path class="n-office-mark" d="M424 141h16M424 148h16M424 155h10"/>
+            <circle class="n-asker" cx="78" cy="248" r="11"/>
+            <circle class="n-next" cx="262" cy="52" r="10"/>
+            <g class="n-bubble">
+              <path d="M52 182h40a10 10 0 0 1 10 10v16a10 10 0 0 1-10 10H82l-6 10-4-10H52a10 10 0 0 1-10-10v-16a10 10 0 0 1 10-10z"/>
+              <text x="72" y="209">?</text>
+            </g>
+          </svg>
+          <figcaption>Asked once, answered, and kept for the next person who asks.</figcaption>
+        </figure>
+      </article>
+
+      <article class="feature feature-intranet reveal">
+        <div class="feature-text">
+          <p class="kicker">Long-term infrastructure</p>
+          <h3><a class="card-link" href="https://docs.projectcampus.org/intranet.html">A campus intranet<span class="vh">: Chapter 2 of the master document</span></a></h3>
+          <p class="tagline">Campus first, with the internet as the outer ring.</p>
+          <p>What VSU makes would live on VSU's own network and servers first. If the internet link is cut, campus services would keep working for anyone on campus <span class="nw">Wi-Fi.</span></p>
+          <ul class="rings">
+            <li><span class="swatch swatch-1" aria-hidden="true"></span><strong>Device</strong><span>the latest notices open with no connection</span></li>
+            <li><span class="swatch swatch-2" aria-hidden="true"></span><strong>Campus</strong><span>VSU's servers, fiber, and <span class="nw">Wi-Fi</span></span></li>
+            <li><span class="swatch swatch-3" aria-hidden="true"></span><strong>VSU-wide</strong><span>the other campuses and offices</span></li>
+            <li><span class="swatch swatch-4" aria-hidden="true"></span><strong>Internet</strong><span>everything from outside, still open</span></li>
+          </ul>
+          <p class="aside">It builds on the fiber, <span class="nw">Wi-Fi,</span> and typhoon-hardened data center VSU already runs, and is offered to VSU ICT and DIGITS as a direction, not a request.</p>
+          <p class="more" aria-hidden="true">Read Chapter 2 <span class="arrow">&rarr;</span></p>
+        </div>
+        <figure class="feature-art">
+          <svg class="art-rings" viewBox="0 0 520 340" aria-hidden="true" focusable="false">
+            <g class="r-outer">
+              <circle class="r-ring r-ring-4" cx="260" cy="172" r="150"/>
+              <g class="r-sites r-sites-4">
+                <circle cx="335" cy="42.1" r="6"/><circle cx="112.3" cy="145.9" r="6"/><circle cx="335" cy="301.9" r="6"/><circle cx="185" cy="301.9" r="6"/><circle cx="404.9" cy="133.2" r="6"/>
+              </g>
+            </g>
+            <circle class="r-ring r-ring-3" cx="260" cy="172" r="108"/>
+            <g class="r-sites r-sites-3">
+              <circle cx="223.1" cy="70.5" r="6"/><circle cx="361.5" cy="208.9" r="6"/><circle cx="158.5" cy="208.9" r="6"/>
+            </g>
+            <circle class="r-ring r-ring-2" cx="260" cy="172" r="66"/>
+            <g class="r-sites r-sites-2">
+              <circle cx="202.8" cy="139" r="6"/><circle cx="317.2" cy="139" r="6"/><circle cx="260" cy="238" r="6"/>
+            </g>
+            <circle class="r-ripple r-ripple-1" cx="260" cy="172" r="18"/>
+            <circle class="r-ripple r-ripple-2" cx="260" cy="172" r="18"/>
+            <circle class="r-device" cx="260" cy="172" r="18"/>
+          </svg>
+          <figcaption>Each ring is meant to keep working when the rings outside it fail.</figcaption>
+        </figure>
+      </article>
     </div>
   </section>
 
-  <section class="wrap section" aria-labelledby="h-ideas">
-    <h2 id="h-ideas">What it proposes</h2>
-    <div class="ideas">
-      <article class="idea" aria-labelledby="h-network">
-        <svg class="idea-art art-network" viewBox="0 0 320 112" aria-hidden="true" focusable="false">
-          <g class="edges">
-            <path d="M34 78 L84 40 M84 40 L130 22 M84 40 L118 88 M118 88 L176 92 M130 22 L190 30 M176 92 L232 60 M190 30 L232 60 M232 60 L290 78 M190 30 L262 18 M262 18 L290 78"/>
-          </g>
-          <path class="route" d="M34 78 L84 40 L130 22 L190 30 L232 60 L290 78"/>
-          <g class="nodes">
-            <circle cx="84" cy="40" r="5"/><circle cx="130" cy="22" r="5"/><circle cx="118" cy="88" r="5"/>
-            <circle cx="176" cy="92" r="5"/><circle cx="190" cy="30" r="5"/><circle cx="232" cy="60" r="5"/><circle cx="262" cy="18" r="5"/>
-          </g>
-          <circle class="asker" cx="34" cy="78" r="7"/>
-          <rect class="office" x="281" y="69" width="18" height="18" rx="4"/>
-          <circle class="kept-ring" cx="290" cy="78" r="17"/>
-        </svg>
-        <p class="idea-kind">The one product</p>
-        <h3 id="h-network">A social/academic network</h3>
-        <p>VSU's own online space for students, faculty, staff, and offices, where questions reach someone who can answer and answers stay findable. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-101">D-101</a> <a class="src" href="https://docs.projectcampus.org/social-network.html">Ch 3</a></small></p>
-      </article>
-      <article class="idea" aria-labelledby="h-intranet">
-        <svg class="idea-art art-rings" viewBox="0 0 320 112" aria-hidden="true" focusable="false">
-          <circle class="ring ring-4" cx="160" cy="100" r="92"/>
-          <circle class="ring ring-3" cx="160" cy="100" r="66"/>
-          <circle class="ring ring-2" cx="160" cy="100" r="40"/>
-          <circle class="ring-1" cx="160" cy="100" r="11"/>
-          <g class="sites">
-            <circle cx="131.7" cy="71.7" r="3.5"/><circle cx="188.3" cy="71.7" r="3.5"/><circle cx="160" cy="60" r="3.5"/>
-            <circle cx="117.6" cy="49.4" r="3.5"/><circle cx="202.4" cy="49.4" r="3.5"/>
-            <circle cx="73.5" cy="68.5" r="3.5"/><circle cx="246.5" cy="68.5" r="3.5"/><circle cx="160" cy="8" r="3.5"/>
-          </g>
-        </svg>
-        <p class="idea-kind">Long-term infrastructure</p>
-        <h3 id="h-intranet">A campus intranet</h3>
-        <p>What VSU makes lives on VSU's own network first, so campus services keep working when the internet link fails. <small class="claim"><span class="tag tag-pro">Proposed</span> <a class="src" href="https://docs.projectcampus.org/intranet.html">Ch 2</a></small> A direction for VSU ICT, not a request. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-022">D-022</a></small></p>
-      </article>
-    </div>
-  </section>
-
-  <section class="wrap section" aria-labelledby="h-parts">
-    <h2 id="h-parts">Explore</h2>
-    <ul class="doors">
-      <li class="door door-open">
-        <div class="door-head"><h3>The master document</h3><span class="status status-open">Open</span></div>
-        <p>The full proposal, its evidence, and every decision.</p>
-        <p class="door-action"><a class="btn btn-primary" href="https://docs.projectcampus.org/">Read it <span aria-hidden="true">&rarr;</span></a></p>
+  <section class="wrap section" aria-labelledby="h-explore">
+    <h2 id="h-explore">Explore the project</h2>
+    <ul class="parts">
+      <li class="part part-open reveal">
+        <p class="status status-open">Open</p>
+        <h3><a class="card-link" href="https://docs.projectcampus.org/">The master document</a></h3>
+        <p>Every chapter, source, and decision behind the proposal.</p>
+        <p class="more" aria-hidden="true">Read it <span class="arrow">&rarr;</span></p>
+        <svg class="part-icon" viewBox="0 0 56 56" aria-hidden="true" focusable="false"><path d="M14 6h20l10 10v30a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M34 6v10h10"/><path d="M19 27h18M19 34h18M19 41h11"/></svg>
       </li>
-      <li class="door">
-        <div class="door-head"><h3>The interactive site</h3><span class="status status-closed">Not public yet</span></div>
-        <p>A walk-through of the proposal, shown in person to VSU offices first. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-152">D-152</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-084">D-084</a></small></p>
+      <li class="part reveal">
+        <p class="status status-closed">Not public yet</p>
+        <h3>The interactive site</h3>
+        <p>A summary of the proposal you can walk around in. It will be shown in person to VSU offices first.</p>
+        <svg class="part-icon" viewBox="0 0 56 56" aria-hidden="true" focusable="false"><path d="M6 14l14-6 16 6 14-6v34l-14 6-16-6-14 6z"/><path d="M20 8v34M36 14v34"/><circle class="icon-dot" cx="28" cy="25" r="4"/></svg>
       </li>
-      <li class="door">
-        <div class="door-head"><h3>The student survey</h3><span class="status status-closed">Not open yet</span></div>
-        <p>For VSU students aged 18 and over. It asks for no name or contact details, and opens once VSU gives permission. <small class="claim"><span class="tag tag-est">Established</span> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-114">D-114</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-094">D-094</a> <a class="src" href="https://docs.projectcampus.org/decisions.html#d-136">D-136</a></small></p>
-        <p class="door-note">VSU student? Please answer it before you read the proposal.</p>
+      <li class="part reveal">
+        <p class="status status-closed">Planned</p>
+        <h3>The network prototype</h3>
+        <p>The first build: a small prototype of the network, on made-up data, to show the author can build it. It needs nothing from VSU.</p>
+        <svg class="part-icon" viewBox="0 0 56 56" aria-hidden="true" focusable="false"><rect x="15" y="4" width="26" height="48" rx="6"/><path d="M24 46h8"/><path d="M21 14h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-6l-4 3v-3h-2a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"/><circle class="icon-dot" cx="32" cy="33" r="3.5"/></svg>
       </li>
     </ul>
+  </section>
+
+  <section class="wrap section" aria-labelledby="h-faq">
+    <h2 id="h-faq">Questions</h2>
+    <div class="faq">
+      <details class="reveal">
+        <summary>Is CAMPUS a VSU project?</summary>
+        <div class="faq-a"><p>No. It is an independent proposal by one alumnus, Leo M. Subingsubing, who works on it full-time with no team, partner, or institutional collaboration. It is not affiliated with Visayas State University, and no VSU office has reviewed, endorsed, approved, funded, or adopted it.</p></div>
+      </details>
+      <details class="reveal">
+        <summary>Why not just use Facebook?</summary>
+        <div class="faq-a"><p>Facebook is built to hold attention, and group chats to carry a conversation. Neither is built to get a question to the person who knows the answer, keep that answer for the next batch, or show who stands behind it and whether it still holds. The network is designed for those three jobs, and would work alongside the group chats people already use.</p></div>
+      </details>
+      <details class="reveal">
+        <summary>Would it replace VSU's own systems?</summary>
+        <div class="faq-a"><p>No. Requests, course work, grades, staff chat, and advisories would stay in VSU's own systems. The network would help people find them, and carry their notices with the source shown.</p></div>
+      </details>
+      <details class="reveal">
+        <summary>What would it ask of VSU?</summary>
+        <div class="faq-a"><p>The first approach will be a concept note to the Office of the Vice President for Student Affairs and Services, with two separate asks: permission to run a student survey and interviews, and interest in CAMPUS. The intranet is a direction offered to VSU ICT, not a request: CAMPUS asks VSU to build, fund, or host nothing for it.</p></div>
+      </details>
+      <details class="reveal">
+        <summary>Has the network been built or tested?</summary>
+        <div class="faq-a"><p>Not yet. No field research has been run, so every problem CAMPUS addresses is still a hypothesis. The first build will be a small prototype of the network, on made-up data, which needs nothing from VSU.</p></div>
+      </details>
+    </div>
+
+    <div class="closing reveal">
+      <p>Every chapter, source, and decision is in the master document.</p>
+      <a class="btn btn-primary" href="https://docs.projectcampus.org/">Read the proposal <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
   </section>
 
 </main>
@@ -117,13 +259,9 @@
 <footer class="footer">
   <div class="wrap">
     <p class="notice">An independent proposal by one alumnus. Not affiliated with Visayas State University.</p>
-    <dl class="legend">
-      <div><dt><span class="tag tag-est">Established</span></dt><dd>backed by a document or recorded decision</dd></div>
-      <div><dt><span class="tag tag-pro">Proposed</span></dt><dd>an idea not yet tested</dd></div>
-      <div><dt><span class="tag tag-unr">Unresolved</span></dt><dd>an open question</dd></div>
-    </dl>
-    <p>Each tag links the part of the <a href="https://docs.projectcampus.org/">master document</a> it rests on; the master document wins wherever the two differ. Checked against it on 28 October 2026.</p>
-    <p>This page collects nothing. &copy; 2026 Leo M. Subingsubing &middot; text CC BY 4.0, code MIT (<a href="https://github.com/Ywcxz/projectcampus.org">source</a>) &middot; fonts under the SIL Open Font License.</p>
+    <p>This page is a summary of the <a href="https://docs.projectcampus.org/">master document</a>, which wins wherever the two differ. Checked against it on 28 October 2026.</p>
+    <p>It collects nothing: no forms, accounts, cookies, or tracking.</p>
+    <p>&copy; 2026 Leo M. Subingsubing &middot; Text CC BY 4.0 &middot; Code MIT (<a href="https://github.com/Ywcxz/projectcampus.org">source</a>) &middot; Fonts under the SIL Open Font License</p>
   </div>
 </footer>
 
