@@ -6,7 +6,7 @@ This repository is the landing page of Project CAMPUS (D-154). It is built from 
 
 - Read the live `index.html` and the master doc rows and chapters a claim rests on, at main. Never write a claim from memory or from a brief alone.
 - A new claim goes into the master doc before it goes on this page.
-- Don't link the interactive site until Q-71 is settled, or the survey until it opens (D-084, D-114, D-154). The test enforces both.
+- The interactive site is linked at its home address only; it asks students to wait for the survey (D-176). Don't link the survey until it opens (D-114). The test enforces both.
 - No claim tags or register IDs on the page (D-161). Let the wording say what is proposed, and link the chapter instead.
 
 ## Never
