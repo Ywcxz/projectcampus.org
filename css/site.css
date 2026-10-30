@@ -146,13 +146,8 @@ strong { font-weight: 500; }
   color: var(--brass); margin: 0 0 1rem;
 }
 
-/* ---------- notice and masthead ---------- */
+/* ---------- masthead ---------- */
 
-.notice-bar {
-  margin: 0; padding: .45rem var(--gutter); text-align: center;
-  font-size: .78rem; line-height: 1.4; color: var(--ink-2);
-  background: var(--paper-2); border-bottom: 1px solid var(--rule);
-}
 .masthead { position: relative; z-index: 2; }
 .masthead-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -177,7 +172,6 @@ strong { font-weight: 500; }
 .btn-primary { background: var(--green); border-color: var(--green); color: var(--paper); box-shadow: var(--shadow-btn); }
 .btn-primary:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
 .btn-ghost { background: var(--card); border-color: var(--rule-2); }
-.btn-small { min-height: 40px; padding: .45rem .95rem; font-size: .85rem; }
 .arrow { display: inline-block; transition: transform .25s var(--ease); }
 .btn:hover .arrow { transform: translateX(3px); }
 
