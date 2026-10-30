@@ -32,6 +32,7 @@ const NOTICE = "Not affiliated with Visayas State University";
 // longer shown here (D-161), and it is never linked before it opens (D-114).
 const ALLOWED_LINKS = [
   /^https:\/\/docs\.projectcampus\.org\//,
+  /^\/$/, // the home page, from the not-found page
   /^https:\/\/github\.com\/Ywcxz\/projectcampus-docs$/,
   /^https:\/\/github\.com\/Ywcxz\/projectcampus\.org$/,
 ];
@@ -62,7 +63,7 @@ for (const page of PAGES) {
   check(!/\b(Established|Proposed|Unresolved)\b/.test(visible), `${page}: shows no claim tags (D-161)`);
   check(!/\b[DQCEP]-\d{2,3}\b/.test(visible), `${page}: shows no register IDs (D-161)`);
   const features = [...html.matchAll(/<article class="feature\b[\s\S]*?<\/article>/g)].map((m) => m[0]);
-  check(features.length >= 2, `${page}: shows the network and the intranet`);
+  if (page === "index.html") check(features.length >= 2, `${page}: shows the network and the intranet`);
   for (const f of features) {
     check(/href="https:\/\/docs\.projectcampus\.org\/[a-z0-9-]+\.html"/.test(f), `${page}: each idea links its chapter in the master doc (D-161)`);
   }
