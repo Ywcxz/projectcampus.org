@@ -184,7 +184,6 @@ strong { font-weight: 500; }
 }
 .lead { font-size: clamp(1.05rem, 3.8vw, 1.2rem); line-height: 1.6; max-width: 38rem; margin: 0 auto 2rem; }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.byline { font: 500 .75rem/1.5 var(--font-mono); letter-spacing: .02em; color: var(--ink-3); margin: 1.6rem 0 0; }
 
 /* The arc under the hero: a horizon in VSU green and gold. */
 .horizon { position: relative; display: block; width: 100%; height: clamp(64px, 10vw, 140px); margin-top: 2.5rem; }

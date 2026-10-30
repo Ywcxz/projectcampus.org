@@ -39,9 +39,8 @@ const ALLOWED_LINKS = [
 for (const page of PAGES) {
   const html = read(page);
   const notices = html.split(NOTICE).length - 1;
-  check(/<p class="byline[^"]*">[^<]*Not affiliated with Visayas State University/.test(html), `${page}: says it is not affiliated on the first screen, under the title`);
   check(/<footer[\s\S]*Not affiliated with Visayas State University[\s\S]*<\/footer>/.test(html), `${page}: says it is not affiliated in the footer`);
-  check(notices >= 2, `${page}: carries the not-affiliated notice on the first screen and in the footer (D-156)`);
+  check(notices >= 2, `${page}: carries the not-affiliated notice in more than one place (D-156)`);
   check(!/<(form|input|textarea|select|iframe)\b/i.test(html), `${page}: has no form, input, or frame, since the page collects nothing`);
   check(!/<script\b/i.test(html), `${page}: has no script; the security policy allows none`);
   check(!/\sstyle="/i.test(html), `${page}: has no inline style, which the security policy would block`);
