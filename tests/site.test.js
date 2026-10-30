@@ -26,12 +26,13 @@ const TEXT = ALL.filter((f) => /\.(html|css|json|md|yml|svg|txt)$/.test(f) || f.
 const PAGES = ALL.filter((f) => f.endsWith(".html"));
 const NOTICE = "Not affiliated with Visayas State University";
 
-// Addresses this page may link to. The interactive site is not among them
-// until Q-71 settles how students reach it only after the survey (D-084, D-154),
-// nor the network prototype, which has no address yet. The survey is no
+// Addresses this page may link to. The interactive site is linked now that
+// D-176 answers Q-71: it opens with a notice asking students to wait for the
+// survey (D-084). Not the network prototype, which has no address yet. The survey is no
 // longer shown here (D-161), and it is never linked before it opens (D-114).
 const ALLOWED_LINKS = [
   /^https:\/\/docs\.projectcampus\.org\//,
+  /^https:\/\/explore\.projectcampus\.org\/$/,
   /^\/$/, // the home page, from the not-found page
   /^https:\/\/github\.com\/Ywcxz\/projectcampus-docs$/,
   /^https:\/\/github\.com\/Ywcxz\/projectcampus\.org$/,
@@ -53,7 +54,6 @@ for (const page of PAGES) {
   for (const href of links) {
     check(ALLOWED_LINKS.some((re) => re.test(href)), `${page}: link ${href} is to the master doc or its source`);
   }
-  check(!/explore\.projectcampus\.org/i.test(html.replace(/<!--[\s\S]*?-->/g, "")), `${page}: does not link or name the interactive site's address before Q-71 is settled (D-154)`);
   check(!/survey\.projectcampus\.org|vsurvey.*vercel\.app/i.test(html), `${page}: does not link the survey before it opens (D-114)`);
 
   // No claim tags or register IDs: they belong to the master doc, and the
