@@ -146,20 +146,6 @@ strong { font-weight: 500; }
   color: var(--brass); margin: 0 0 1rem;
 }
 
-/* ---------- masthead ---------- */
-
-.masthead { position: relative; z-index: 2; }
-.masthead-inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding-top: .85rem; padding-bottom: .85rem;
-}
-.brand {
-  display: flex; align-items: center; gap: .6rem; margin: 0;
-  font: 500 1.2rem/1.2 var(--font-display);
-}
-.brand img { width: 28px; height: 28px; border-radius: 7px; }
-.brand em { font-style: italic; font-weight: 600; }
-
 /* ---------- buttons ---------- */
 
 .btn {
@@ -177,7 +163,8 @@ strong { font-weight: 500; }
 
 /* ---------- hero ---------- */
 
-.hero { position: relative; overflow: hidden; text-align: center; padding-top: 3rem; }
+.hero { position: relative; overflow: hidden; text-align: center; padding-top: 3.5rem; }
+.mark { display: block; width: 44px; height: 44px; border-radius: 11px; margin: 0 auto 1.1rem; }
 
 /* A faint network behind the title, clear of the text in the middle. */
 .sky {
