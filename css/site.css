@@ -146,25 +146,6 @@ strong { font-weight: 500; }
   color: var(--brass); margin: 0 0 1rem;
 }
 
-/* ---------- notice and masthead ---------- */
-
-.notice-bar {
-  margin: 0; padding: .45rem var(--gutter); text-align: center;
-  font-size: .78rem; line-height: 1.4; color: var(--ink-2);
-  background: var(--paper-2); border-bottom: 1px solid var(--rule);
-}
-.masthead { position: relative; z-index: 2; }
-.masthead-inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding-top: .85rem; padding-bottom: .85rem;
-}
-.brand {
-  display: flex; align-items: center; gap: .6rem; margin: 0;
-  font: 500 1.2rem/1.2 var(--font-display);
-}
-.brand img { width: 28px; height: 28px; border-radius: 7px; }
-.brand em { font-style: italic; font-weight: 600; }
-
 /* ---------- buttons ---------- */
 
 .btn {
@@ -177,13 +158,13 @@ strong { font-weight: 500; }
 .btn-primary { background: var(--green); border-color: var(--green); color: var(--paper); box-shadow: var(--shadow-btn); }
 .btn-primary:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
 .btn-ghost { background: var(--card); border-color: var(--rule-2); }
-.btn-small { min-height: 40px; padding: .45rem .95rem; font-size: .85rem; }
 .arrow { display: inline-block; transition: transform .25s var(--ease); }
 .btn:hover .arrow { transform: translateX(3px); }
 
 /* ---------- hero ---------- */
 
-.hero { position: relative; overflow: hidden; text-align: center; padding-top: 3rem; }
+.hero { position: relative; overflow: hidden; text-align: center; padding-top: 3.5rem; }
+.mark { display: block; width: 44px; height: 44px; border-radius: 11px; margin: 0 auto 1.1rem; }
 
 /* A faint network behind the title, clear of the text in the middle. */
 .sky {
@@ -203,7 +184,6 @@ strong { font-weight: 500; }
 }
 .lead { font-size: clamp(1.05rem, 3.8vw, 1.2rem); line-height: 1.6; max-width: 38rem; margin: 0 auto 2rem; }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.byline { font: 500 .75rem/1.5 var(--font-mono); letter-spacing: .02em; color: var(--ink-3); margin: 1.6rem 0 0; }
 
 /* The arc under the hero: a horizon in VSU green and gold. */
 .horizon { position: relative; display: block; width: 100%; height: clamp(64px, 10vw, 140px); margin-top: 2.5rem; }
