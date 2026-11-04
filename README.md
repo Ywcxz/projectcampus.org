@@ -8,7 +8,7 @@ The front door of Project CAMPUS: a short summary of the project and links to it
 
 | Part | Address | On this page |
 | --- | --- | --- |
-| Master doc | docs.projectcampus.org | Linked, along with the two chapters the page summarizes: the network (Chapter 3) and the intranet (Chapter 2) |
+| Master doc | docs.projectcampus.org | Linked, along with the two chapters the page summarizes: the network (Chapter 2) and the intranet (Chapter 4) |
 | Interactive site | explore.projectcampus.org | Shown as **Not public yet**, with no link, until Q-71 settles how students reach it only after the survey (D-084, D-154). |
 | Network prototype | none yet | Shown as **Planned**, with no link, until it runs somewhere public (D-099, Q-09). |
 | Student survey | survey.projectcampus.org/student-life | Not shown (D-161). Its link goes out through the channels VSU approves (D-136), and the test fails if the page links it before it opens (D-114). |
