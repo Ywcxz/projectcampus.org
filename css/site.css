@@ -279,20 +279,43 @@ strong { font-weight: 500; }
    the answer is kept, and it reaches the next person who asks. */
 .n-edges { fill: none; stroke: var(--rule-2); stroke-width: 2; }
 .n-nodes circle { fill: var(--paper); stroke: var(--ink-3); stroke-width: 2; }
-.n-route, .n-route-b, .n-kept { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.n-route { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
 .n-route { stroke: var(--green); stroke-width: 4.5; }
-.n-route-b { stroke: var(--brass); stroke-width: 3.5; }
-.n-kept { stroke: var(--gold); stroke-width: 4; }
 .n-pulse { fill: none; stroke-width: 15; stroke-linecap: round; stroke-dasharray: .001 200; opacity: 0; }
 .n-pulse-a { stroke: var(--green); }
-.n-pulse-b { stroke: var(--gold); }
 .n-office { fill: var(--green); }
 .n-office-mark { fill: none; stroke: var(--paper); stroke-width: 2.5; stroke-linecap: round; }
 .n-asker { fill: var(--sea); }
-.n-next { fill: var(--gold); stroke: var(--paper); stroke-width: 3; }
 .n-bubble path { fill: var(--sea); }
 .n-bubble text { fill: var(--paper); font: 600 26px/1 var(--font-display); text-anchor: middle; }
-.n-office, .n-office-mark, .n-next { transform-box: fill-box; transform-origin: center; }
+.n-office, .n-office-mark, .m-ask, .m-card, .t-chip, .t-who { transform-box: fill-box; transform-origin: center; }
+
+/* The network drawing has three acts: routing, memory, trust. Each state below
+   is the act's finished picture, which is what shows when motion is reduced. */
+.feature-network .act-2, .feature-network .act-3 { opacity: 0; }
+.feature-network figcaption { display: grid; }
+.feature-network figcaption span { grid-area: 1 / 1; }
+.feature-network .offers li { position: relative; z-index: 3; }
+.feature-network .offers li::before {
+  content: ""; position: absolute; z-index: -1; left: -.49rem; top: .31rem;
+  width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--highlight); opacity: 0;
+}
+.feature-network .offers li:first-child::before { opacity: 1; }
+.m-route, .m-kept, .t-link, .t-check, .t-ring { stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.m-route { fill: none; stroke: var(--brass); stroke-width: 3.5; }
+.m-kept { fill: none; stroke: var(--gold); stroke-width: 4; }
+.m-card rect { fill: var(--paper); stroke: var(--gold); stroke-width: 2.5; }
+.m-card path { fill: none; stroke: var(--ink-3); stroke-width: 2.5; stroke-linecap: round; }
+.m-card circle { fill: var(--brass); }
+.m-ask { fill: var(--gold); stroke: var(--paper); stroke-width: 3; }
+.t-link { fill: none; stroke: var(--green); stroke-width: 4.5; }
+.t-old { fill: var(--paper-2); stroke: var(--ink-3); stroke-width: 2; stroke-dasharray: 7 7; opacity: .6; }
+.t-card { fill: var(--paper); stroke: var(--ink-3); stroke-width: 2; }
+.t-lines { fill: none; stroke: var(--rule-2); stroke-width: 6; stroke-linecap: round; }
+.t-chip, .t-who rect { fill: var(--green); }
+.t-who path { fill: none; stroke: var(--paper); stroke-width: 2.2; stroke-linecap: round; }
+.t-ring { fill: var(--paper); stroke: var(--gold); stroke-width: 3.5; }
+.t-check { fill: none; stroke: var(--green); stroke-width: 4; }
 .n-bubble { transform-box: fill-box; transform-origin: 60% 100%; }
 
 /* The rings: the device at the centre, each ring around it. The
@@ -448,15 +471,42 @@ strong { font-weight: 500; }
 .hz-glow { animation: hz-breathe 6s ease-in-out infinite; }
 .hz-spark { animation: hz-travel 9s cubic-bezier(.45, 0, .55, 1) 1.2s infinite both; }
 
+/* Three acts of nine seconds each: routing, memory, trust. Pointing at one of
+   the three jobs holds its act on screen; otherwise the acts take turns. */
+.feature-network .act-1, .feature-network .offers li:nth-child(1)::before { animation: act-1 27s linear infinite both; }
+.feature-network .act-2, .feature-network .offers li:nth-child(2)::before { animation: act-2 27s linear infinite both; }
+.feature-network .act-3, .feature-network .offers li:nth-child(3)::before { animation: act-3 27s linear infinite both; }
+.feature-network:has(.offers li:hover) .act,
+.feature-network:has(.offers li:hover) .offers li::before { animation: none; opacity: 0; }
+.feature-network:has(.offers li:nth-child(1):hover) .act-1,
+.feature-network:has(.offers li:nth-child(2):hover) .act-2,
+.feature-network:has(.offers li:nth-child(3):hover) .act-3,
+.feature-network:has(.offers li:hover) .offers li:hover::before { opacity: 1; }
+@keyframes act-1 { 0% { opacity: 0; } 1.5%, 31.8% { opacity: 1; } 33.33%, 100% { opacity: 0; } }
+@keyframes act-2 { 0%, 33.33% { opacity: 0; } 34.8%, 65.1% { opacity: 1; } 66.66%, 100% { opacity: 0; } }
+@keyframes act-3 { 0%, 66.66% { opacity: 0; } 68.2%, 98.5% { opacity: 1; } 100% { opacity: 0; } }
+
 .art-network .n-bubble  { animation: n-bubble 9s ease-in-out infinite both; }
 .art-network .n-route   { animation: n-route 9s ease-in-out infinite both; }
 .art-network .n-pulse-a { animation: n-pulse-a 9s ease-in-out infinite both; }
 .art-network .n-office,
 .art-network .n-office-mark { animation: n-office 9s ease-in-out infinite both; }
-.art-network .n-kept    { animation: n-kept 9s ease-in-out infinite both; }
-.art-network .n-route-b { animation: n-route-b 9s ease-in-out infinite both; }
-.art-network .n-pulse-b { animation: n-pulse-b 9s ease-in-out infinite both; }
-.art-network .n-next    { animation: n-next 9s ease-in-out infinite both; }
+.art-network .m-kept { animation: m-kept 9s ease-in-out infinite both; }
+.art-network .m-card { animation: m-card 9s ease-in-out infinite both; }
+.art-network .m-r1 { animation: m-r1 9s ease-in-out infinite both; }
+.art-network .m-r2 { animation: m-r2 9s ease-in-out infinite both; }
+.art-network .m-r3 { animation: m-r3 9s ease-in-out infinite both; }
+.art-network .m-a1 { animation: m-a1 9s ease-in-out infinite both; }
+.art-network .m-a2 { animation: m-a2 9s ease-in-out infinite both; }
+.art-network .m-a3 { animation: m-a3 9s ease-in-out infinite both; }
+.art-network .t-all { animation: t-all 9s ease-in-out infinite both; }
+.art-network .t-link { animation: t-link 9s ease-in-out infinite both; }
+.art-network .t-old { animation: t-old 9s ease-in-out infinite both; }
+.art-network .t-main { animation: t-main 9s var(--ease) infinite both; }
+.art-network .t-chip { animation: t-chip 9s ease-in-out infinite both; }
+.art-network .t-who { animation: t-who 9s ease-in-out infinite both; }
+.art-network .t-ring { animation: t-ring 9s ease-in-out infinite both; }
+.art-network .t-check { animation: t-check 9s ease-in-out infinite both; }
 
 @keyframes n-bubble {
   0% { opacity: 0; transform: scale(.4); }
@@ -480,29 +530,75 @@ strong { font-weight: 500; }
   36% { transform: scale(1.2); }
   42%, 100% { transform: scale(1); }
 }
-@keyframes n-kept {
-  0%, 36% { stroke-dashoffset: 100; opacity: 1; }
-  48% { stroke-dashoffset: 0; }
+
+@keyframes m-kept {
+  0%, 4% { stroke-dashoffset: 100; opacity: 1; }
+  14% { stroke-dashoffset: 0; }
   86% { stroke-dashoffset: 0; opacity: 1; }
   94%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
-@keyframes n-route-b {
-  0%, 50% { stroke-dashoffset: 100; opacity: 1; }
-  68% { stroke-dashoffset: 0; }
+@keyframes m-card {
+  0%, 13% { opacity: 0; transform: scale(.5); }
+  19%, 86% { opacity: 1; transform: scale(1); }
+  94%, 100% { opacity: 0; transform: scale(.9); }
+}
+@keyframes m-r1 {
+  0%, 22% { stroke-dashoffset: 100; opacity: 1; }
+  34% { stroke-dashoffset: 0; }
   86% { stroke-dashoffset: 0; opacity: 1; }
   94%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
-@keyframes n-pulse-b {
-  0%, 50% { stroke-dashoffset: 0; opacity: 0; }
-  52% { opacity: 1; }
-  68% { stroke-dashoffset: -100; opacity: 1; }
-  70%, 100% { stroke-dashoffset: -100; opacity: 0; }
+@keyframes m-r2 {
+  0%, 40% { stroke-dashoffset: 100; opacity: 1; }
+  50% { stroke-dashoffset: 0; }
+  86% { stroke-dashoffset: 0; opacity: 1; }
+  94%, 100% { stroke-dashoffset: 0; opacity: 0; }
 }
-@keyframes n-next {
-  0%, 66% { fill: var(--paper); stroke: var(--ink-3); transform: scale(1); }
-  71% { fill: var(--gold); stroke: var(--paper); transform: scale(1.3); }
-  76%, 86% { fill: var(--gold); stroke: var(--paper); transform: scale(1); }
-  94%, 100% { fill: var(--paper); stroke: var(--ink-3); transform: scale(1); }
+@keyframes m-r3 {
+  0%, 56% { stroke-dashoffset: 100; opacity: 1; }
+  70% { stroke-dashoffset: 0; }
+  86% { stroke-dashoffset: 0; opacity: 1; }
+  94%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes m-a1 {
+  0%, 18% { opacity: 0; transform: scale(.4); fill: var(--sea); }
+  22%, 33% { opacity: 1; transform: scale(1); fill: var(--sea); }
+  37% { transform: scale(1.3); fill: var(--gold); }
+  41%, 86% { opacity: 1; transform: scale(1); fill: var(--gold); }
+  94%, 100% { opacity: 0; transform: scale(1); fill: var(--gold); }
+}
+@keyframes m-a2 {
+  0%, 36% { opacity: 0; transform: scale(.4); fill: var(--sea); }
+  40%, 49% { opacity: 1; transform: scale(1); fill: var(--sea); }
+  53% { transform: scale(1.3); fill: var(--gold); }
+  57%, 86% { opacity: 1; transform: scale(1); fill: var(--gold); }
+  94%, 100% { opacity: 0; transform: scale(1); fill: var(--gold); }
+}
+@keyframes m-a3 {
+  0%, 52% { opacity: 0; transform: scale(.4); fill: var(--sea); }
+  56%, 69% { opacity: 1; transform: scale(1); fill: var(--sea); }
+  73% { transform: scale(1.3); fill: var(--gold); }
+  77%, 86% { opacity: 1; transform: scale(1); fill: var(--gold); }
+  94%, 100% { opacity: 0; transform: scale(1); fill: var(--gold); }
+}
+
+@keyframes t-all { 0% { opacity: 0; } 5%, 86% { opacity: 1; } 94%, 100% { opacity: 0; } }
+@keyframes t-link { 0%, 8% { stroke-dashoffset: 100; } 16%, 100% { stroke-dashoffset: 0; } }
+@keyframes t-old {
+  0%, 24% { stroke-dasharray: 7 0; opacity: 1; }
+  32%, 100% { stroke-dasharray: 7 7; opacity: .6; }
+}
+@keyframes t-main {
+  0%, 14% { opacity: 0; transform: translate(16px, -10px); }
+  24%, 100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes t-chip { 0%, 28% { transform: scale(0); } 33% { transform: scale(1.15); } 36%, 100% { transform: scale(1); } }
+@keyframes t-who { 0%, 40% { transform: scale(0); } 45% { transform: scale(1.15); } 48%, 100% { transform: scale(1); } }
+@keyframes t-ring { 0%, 54% { stroke-dashoffset: 100; } 62%, 100% { stroke-dashoffset: 0; } }
+@keyframes t-check {
+  0%, 62% { stroke-dashoffset: 100; opacity: 0; }
+  63% { stroke-dashoffset: 100; opacity: 1; }
+  70%, 100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
 .art-rings .r-ripple-1 { animation: r-ripple 4.5s cubic-bezier(.2, .6, .3, 1) infinite; }
