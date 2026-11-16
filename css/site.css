@@ -328,6 +328,25 @@ strong { font-weight: 500; }
 .r-sites-2 circle, .r-sites-3 circle { stroke: var(--green); }
 .r-sites-4 circle { stroke: var(--sea); }
 .r-device { fill: var(--gold); transform-box: fill-box; transform-origin: center; }
+
+/* The rings drawing has four acts, one for each ring. With no motion, every
+   ring shows at full strength and no act is drawn over it. */
+.feature-intranet .ract { opacity: 0; }
+.feature-intranet .r-caps { display: grid; }
+.feature-intranet .r-caps span { grid-area: 1 / 1; }
+.feature-intranet .r-rule { display: block; }
+.feature-intranet .rings li { position: relative; z-index: 3; }
+.feature-intranet .rings li::before {
+  content: ""; position: absolute; z-index: -1; left: -6px; top: -1px;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--highlight); opacity: 0;
+}
+.r-flow { fill: none; stroke: var(--green); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.r-on { fill: var(--green); stroke: var(--paper); stroke-width: 2; }
+.ract-4 .r-flow { stroke: var(--sea); }
+.ract-4 .r-on { fill: var(--sea); }
+.r-note { transform-box: fill-box; transform-origin: 50% 100%; }
+.r-note rect { fill: var(--paper); stroke: var(--gold); stroke-width: 2.5; }
+.r-note path { fill: none; stroke: var(--ink-3); stroke-width: 2.5; stroke-linecap: round; }
 .r-ripple {
   fill: none; stroke: var(--gold); stroke-width: 2.5; vector-effect: non-scaling-stroke;
   transform-box: fill-box; transform-origin: center; opacity: 0;
@@ -604,11 +623,53 @@ strong { font-weight: 500; }
 .art-rings .r-ripple-1 { animation: r-ripple 4.5s cubic-bezier(.2, .6, .3, 1) infinite; }
 .art-rings .r-ripple-2 { animation: r-ripple 4.5s cubic-bezier(.2, .6, .3, 1) 2.25s infinite; }
 .art-rings .r-device { animation: r-device 4.5s ease-in-out infinite; }
-.art-rings .r-outer { animation: r-outage 11s ease-in-out infinite; }
+
+/* Four acts of six seconds each, from the device outward. Each act lights its
+   ring and the rings inside it; the rings outside it dim. Pointing at a ring
+   in the list holds its act; otherwise the acts take turns. */
+.art-rings .r-g2 { animation: r-dim-2 24s linear infinite both; }
+.art-rings .r-g3 { animation: r-dim-3 24s linear infinite both; }
+.art-rings .r-outer { animation: r-dim-4 24s linear infinite both; }
+.feature-intranet .ract-1, .feature-intranet .rings li:nth-child(1)::before { animation: ract-1 24s linear infinite both; }
+.feature-intranet .ract-2, .feature-intranet .rings li:nth-child(2)::before { animation: ract-2 24s linear infinite both; }
+.feature-intranet .ract-3, .feature-intranet .rings li:nth-child(3)::before { animation: ract-3 24s linear infinite both; }
+.feature-intranet .ract-4, .feature-intranet .rings li:nth-child(4)::before { animation: ract-4 24s linear infinite both; }
+.art-rings .r-flow { animation: r-flow 6s ease-in-out infinite both; }
+.art-rings .r-note { animation: r-note 6s ease-in-out infinite both; }
+.feature-intranet:has(.rings li:hover) .ract,
+.feature-intranet:has(.rings li:hover) .rings li::before { animation: none; opacity: 0; }
+.feature-intranet:has(.rings li:hover) .r-g2,
+.feature-intranet:has(.rings li:hover) .r-g3,
+.feature-intranet:has(.rings li:hover) .r-outer { animation: none; opacity: .22; }
+.feature-intranet:has(.rings li:nth-child(1):hover) .ract-1,
+.feature-intranet:has(.rings li:nth-child(2):hover) .ract-2,
+.feature-intranet:has(.rings li:nth-child(3):hover) .ract-3,
+.feature-intranet:has(.rings li:nth-child(4):hover) .ract-4,
+.feature-intranet:has(.rings li:nth-child(n+2):hover) .r-g2,
+.feature-intranet:has(.rings li:nth-child(n+3):hover) .r-g3,
+.feature-intranet:has(.rings li:nth-child(4):hover) .r-outer,
+.feature-intranet:has(.rings li:hover) .rings li:hover::before { opacity: 1; }
+@keyframes ract-1 { 0% { opacity: 0; } 2%, 23% { opacity: 1; } 25%, 100% { opacity: 0; } }
+@keyframes ract-2 { 0%, 25% { opacity: 0; } 27%, 48% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes ract-3 { 0%, 50% { opacity: 0; } 52%, 73% { opacity: 1; } 75%, 100% { opacity: 0; } }
+@keyframes ract-4 { 0%, 75% { opacity: 0; } 77%, 98% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes r-dim-2 { 0%, 24% { opacity: .22; } 27%, 98% { opacity: 1; } 100% { opacity: .22; } }
+@keyframes r-dim-3 { 0%, 49% { opacity: .22; } 52%, 98% { opacity: 1; } 100% { opacity: .22; } }
+@keyframes r-dim-4 { 0%, 74% { opacity: .22; } 77%, 98% { opacity: 1; } 100% { opacity: .22; } }
+@keyframes r-flow {
+  0%, 8% { stroke-dashoffset: 100; opacity: 1; }
+  40% { stroke-dashoffset: 0; }
+  85% { stroke-dashoffset: 0; opacity: 1; }
+  95%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes r-note {
+  0%, 8% { opacity: 0; transform: scale(.5); }
+  18%, 85% { opacity: 1; transform: scale(1); }
+  95%, 100% { opacity: 0; transform: scale(.9); }
+}
 
 @keyframes r-ripple { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(8.4); opacity: 0; } }
 @keyframes r-device { 0%, 30%, 100% { transform: scale(1); } 12% { transform: scale(1.14); } }
-@keyframes r-outage { 0%, 50% { opacity: 1; } 56%, 80% { opacity: .15; } 86%, 100% { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
