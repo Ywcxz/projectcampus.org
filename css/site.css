@@ -344,6 +344,10 @@ strong { font-weight: 500; }
 .r-on { fill: var(--green); stroke: var(--paper); stroke-width: 2; }
 .ract-4 .r-flow { stroke: var(--sea); }
 .ract-4 .r-on { fill: var(--sea); }
+.r-pulse { fill: none; stroke-width: 9; stroke-linecap: round; stroke-dasharray: .001 200; opacity: 0; }
+.r-in { stroke: var(--green); }
+.r-out { stroke: var(--gold); }
+.ract-4 .r-in { stroke: var(--sea); }
 .r-note { transform-box: fill-box; transform-origin: 50% 100%; }
 .r-note rect { fill: var(--paper); stroke: var(--gold); stroke-width: 2.5; }
 .r-note path { fill: none; stroke: var(--ink-3); stroke-width: 2.5; stroke-linecap: round; }
@@ -636,6 +640,20 @@ strong { font-weight: 500; }
 .feature-intranet .ract-4, .feature-intranet .rings li:nth-child(4)::before { animation: ract-4 24s linear infinite both; }
 .art-rings .r-flow { animation: r-flow 6s ease-in-out infinite both; }
 .art-rings .r-note { animation: r-note 6s ease-in-out infinite both; }
+/* Traffic both ways on each ring's lines: inward green, outward gold.
+   Inner rings move faster than outer ones; in and out run at different paces. */
+.art-rings .r-pulse { animation: r-pulse linear infinite both; }
+.art-rings .ract-2 .r-in  { animation-duration: 1.4s; }
+.art-rings .ract-2 .r-out { animation-duration: 2.1s; animation-delay: .5s; }
+.art-rings .ract-3 .r-in  { animation-duration: 2.2s; }
+.art-rings .ract-3 .r-out { animation-duration: 3.1s; animation-delay: .8s; }
+.art-rings .ract-4 .r-in  { animation-duration: 3.4s; }
+.art-rings .ract-4 .r-out { animation-duration: 4.6s; animation-delay: 1.2s; }
+@keyframes r-pulse {
+  0% { stroke-dashoffset: 0; opacity: 0; }
+  10%, 85% { opacity: 1; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
 .feature-intranet:has(.rings li:hover) .ract,
 .feature-intranet:has(.rings li:hover) .rings li::before { animation: none; opacity: 0; }
 .feature-intranet:has(.rings li:hover) .r-g2,
