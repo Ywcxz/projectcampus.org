@@ -640,15 +640,34 @@ strong { font-weight: 500; }
 .feature-intranet .ract-4, .feature-intranet .rings li:nth-child(4)::before { animation: ract-4 24s linear infinite both; }
 .art-rings .r-flow { animation: r-flow 6s ease-in-out infinite both; }
 .art-rings .r-note { animation: r-note 6s ease-in-out infinite both; }
-/* Traffic both ways on each ring's lines: inward green, outward gold.
-   Inner rings move faster than outer ones; in and out run at different paces. */
+/* Traffic both ways on each ring's lines: inward green, outward gold. Each
+   line sets its own pace and start in index.html, so no two move in step;
+   inner rings run faster than outer ones on average. */
 .art-rings .r-pulse { animation: r-pulse linear infinite both; }
-.art-rings .ract-2 .r-in  { animation-duration: 1.4s; }
-.art-rings .ract-2 .r-out { animation-duration: 2.1s; animation-delay: .5s; }
-.art-rings .ract-3 .r-in  { animation-duration: 2.2s; }
-.art-rings .ract-3 .r-out { animation-duration: 3.1s; animation-delay: .8s; }
-.art-rings .ract-4 .r-in  { animation-duration: 3.4s; }
-.art-rings .ract-4 .r-out { animation-duration: 4.6s; animation-delay: 1.2s; }
+/* Each line on a ring has its own pace and start (paths come in threes:
+   the line, its inward pulse, its outward pulse). */
+.art-rings .ract-2 path:nth-of-type(2) { animation-duration: 1.40s; animation-delay: 0.0s; }
+.art-rings .ract-2 path:nth-of-type(3) { animation-duration: 2.10s; animation-delay: 0.5s; }
+.art-rings .ract-2 path:nth-of-type(5) { animation-duration: 1.89s; animation-delay: 0.37s; }
+.art-rings .ract-2 path:nth-of-type(6) { animation-duration: 2.83s; animation-delay: 0.87s; }
+.art-rings .ract-2 path:nth-of-type(8) { animation-duration: 1.12s; animation-delay: 0.74s; }
+.art-rings .ract-2 path:nth-of-type(9) { animation-duration: 1.68s; animation-delay: 1.24s; }
+.art-rings .ract-3 path:nth-of-type(2) { animation-duration: 2.20s; animation-delay: 0.0s; }
+.art-rings .ract-3 path:nth-of-type(3) { animation-duration: 3.30s; animation-delay: 0.5s; }
+.art-rings .ract-3 path:nth-of-type(5) { animation-duration: 2.97s; animation-delay: 0.37s; }
+.art-rings .ract-3 path:nth-of-type(6) { animation-duration: 4.46s; animation-delay: 0.87s; }
+.art-rings .ract-3 path:nth-of-type(8) { animation-duration: 1.76s; animation-delay: 0.74s; }
+.art-rings .ract-3 path:nth-of-type(9) { animation-duration: 2.64s; animation-delay: 1.24s; }
+.art-rings .ract-4 path:nth-of-type(2) { animation-duration: 3.40s; animation-delay: 0.0s; }
+.art-rings .ract-4 path:nth-of-type(3) { animation-duration: 5.10s; animation-delay: 0.5s; }
+.art-rings .ract-4 path:nth-of-type(5) { animation-duration: 4.59s; animation-delay: 0.37s; }
+.art-rings .ract-4 path:nth-of-type(6) { animation-duration: 6.88s; animation-delay: 0.87s; }
+.art-rings .ract-4 path:nth-of-type(8) { animation-duration: 2.72s; animation-delay: 0.74s; }
+.art-rings .ract-4 path:nth-of-type(9) { animation-duration: 4.08s; animation-delay: 1.24s; }
+.art-rings .ract-4 path:nth-of-type(11) { animation-duration: 4.08s; animation-delay: 1.11s; }
+.art-rings .ract-4 path:nth-of-type(12) { animation-duration: 6.12s; animation-delay: 1.61s; }
+.art-rings .ract-4 path:nth-of-type(14) { animation-duration: 3.06s; animation-delay: 1.48s; }
+.art-rings .ract-4 path:nth-of-type(15) { animation-duration: 4.59s; animation-delay: 1.98s; }
 @keyframes r-pulse {
   0% { stroke-dashoffset: 0; opacity: 0; }
   10%, 85% { opacity: 1; }
