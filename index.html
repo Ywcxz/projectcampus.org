@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#1D251F" media="(prefers-color-scheme: dark)">
 <link rel="preload" href="fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=0.3.5">
+<link rel="stylesheet" href="css/site.css?v=0.3.6">
 </head>
 <body>
 
@@ -124,26 +124,64 @@
         <figure class="feature-art">
           <svg class="art-network" viewBox="0 0 520 340" aria-hidden="true" focusable="false">
             <path class="n-edges" d="M78 248L160 188M78 248L150 290M78 248L98 120M160 188L238 128M160 188L250 270M160 188L98 120M238 128L322 196M238 128L180 60M238 128L262 52M238 128L340 92M322 196L432 148M322 196L250 270M322 196L372 284M340 92L432 148M340 92L262 52M340 92L452 50M432 148L468 252M432 148L452 50M150 290L250 270M250 270L372 284M372 284L468 252M98 120L180 60M180 60L262 52"/>
-            <path class="n-route" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
-            <path class="n-route-b" d="M432 148L340 92L262 52" pathLength="100"/>
             <g class="n-nodes">
               <circle cx="160" cy="188" r="7"/><circle cx="238" cy="128" r="7"/><circle cx="322" cy="196" r="7"/><circle cx="340" cy="92" r="7"/>
               <circle cx="150" cy="290" r="7"/><circle cx="250" cy="270" r="7"/><circle cx="372" cy="284" r="7"/><circle cx="468" cy="252" r="7"/>
               <circle cx="98" cy="120" r="7"/><circle cx="180" cy="60" r="7"/><circle cx="452" cy="50" r="7"/>
+              <circle cx="78" cy="248" r="7"/><circle cx="262" cy="52" r="7"/>
             </g>
-            <path class="n-pulse n-pulse-a" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
-            <path class="n-pulse n-pulse-b" d="M432 148L340 92L262 52" pathLength="100"/>
-            <circle class="n-kept" cx="432" cy="148" r="31" pathLength="100"/>
-            <rect class="n-office" x="414" y="130" width="36" height="36" rx="9"/>
-            <path class="n-office-mark" d="M424 141h16M424 148h16M424 155h10"/>
-            <circle class="n-asker" cx="78" cy="248" r="11"/>
-            <circle class="n-next" cx="262" cy="52" r="10"/>
-            <g class="n-bubble">
-              <path d="M52 182h40a10 10 0 0 1 10 10v16a10 10 0 0 1-10 10H82l-6 10-4-10H52a10 10 0 0 1-10-10v-16a10 10 0 0 1 10-10z"/>
-              <text x="72" y="209">?</text>
+            <g class="act act-1">
+              <path class="n-route" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
+              <path class="n-pulse n-pulse-a" d="M78 248L160 188L238 128L322 196L432 148" pathLength="100"/>
+              <rect class="n-office" x="414" y="130" width="36" height="36" rx="9"/>
+              <path class="n-office-mark" d="M424 141h16M424 148h16M424 155h10"/>
+              <circle class="n-asker" cx="78" cy="248" r="11"/>
+              <g class="n-bubble">
+                <path d="M52 182h40a10 10 0 0 1 10 10v16a10 10 0 0 1-10 10H82l-6 10-4-10H52a10 10 0 0 1-10-10v-16a10 10 0 0 1 10-10z"/>
+                <text x="72" y="209">?</text>
+              </g>
+            </g>
+            <g class="act act-2">
+              <path class="m-route m-r1" d="M262 52L340 92L432 148" pathLength="100"/>
+              <path class="m-route m-r2" d="M468 252L432 148" pathLength="100"/>
+              <path class="m-route m-r3" d="M250 270L322 196L432 148" pathLength="100"/>
+              <circle class="m-kept" cx="432" cy="148" r="31" pathLength="100"/>
+              <rect class="n-office" x="414" y="130" width="36" height="36" rx="9"/>
+              <path class="n-office-mark" d="M424 141h16M424 148h16M424 155h10"/>
+              <g class="m-card">
+                <rect x="462" y="76" width="50" height="40" rx="7"/>
+                <path d="M471 89h32M471 98h32M481 107h14"/>
+                <circle cx="474" cy="107" r="2.5"/>
+              </g>
+              <circle class="m-ask m-a1" cx="262" cy="52" r="10"/>
+              <circle class="m-ask m-a2" cx="468" cy="252" r="10"/>
+              <circle class="m-ask m-a3" cx="250" cy="270" r="10"/>
+            </g>
+            <g class="act act-3">
+              <g class="t-all">
+                <path class="t-link" d="M414 148H366" pathLength="100"/>
+                <rect class="n-office" x="414" y="130" width="36" height="36" rx="9"/>
+                <path class="n-office-mark" d="M424 141h16M424 148h16M424 155h10"/>
+                <rect class="t-old" x="144" y="60" width="220" height="200" rx="14"/>
+                <g class="t-main">
+                  <rect class="t-card" x="120" y="78" width="220" height="200" rx="14"/>
+                  <path class="t-lines" d="M140 142h180M140 160h180M140 178h116M180 231h70M180 243h44"/>
+                  <rect class="t-chip" x="140" y="98" width="92" height="22" rx="11"/>
+                  <g class="t-who">
+                    <rect x="140" y="222" width="30" height="30" rx="8"/>
+                    <path d="M148 232h14M148 237h14M148 242h9"/>
+                  </g>
+                  <circle class="t-ring" cx="306" cy="237" r="17" pathLength="100"/>
+                  <path class="t-check" d="M297 237l6 6 12-13" pathLength="100"/>
+                </g>
+              </g>
             </g>
           </svg>
-          <figcaption>Asked once, answered, and kept for the next person who asks.</figcaption>
+          <figcaption>
+            <span class="act act-1">Routing: a question reaches the office that can answer.</span>
+            <span class="act act-2">Memory: the confirmed answer stays for the next person who asks.</span>
+            <span class="act act-3">Trust: a notice shows who stands behind it, and whether it still holds.</span>
+          </figcaption>
         </figure>
       </article>
 
