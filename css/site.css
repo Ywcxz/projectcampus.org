@@ -646,32 +646,32 @@ strong { font-weight: 500; }
 .art-rings .r-pulse { animation: r-pulse linear infinite both; }
 /* Each line on a ring has its own pace and start (paths come in threes:
    the line, its inward pulse, its outward pulse). */
-.art-rings .ract-2 path:nth-of-type(2) { animation-duration: 1.0s; animation-delay: 0.0s; }
-.art-rings .ract-2 path:nth-of-type(3) { animation-duration: 2.4s; animation-delay: 0.4s; }
-.art-rings .ract-2 path:nth-of-type(5) { animation-duration: 1.8s; animation-delay: 0.3s; }
-.art-rings .ract-2 path:nth-of-type(6) { animation-duration: 1.3s; animation-delay: 0.7s; }
-.art-rings .ract-2 path:nth-of-type(8) { animation-duration: 2.6s; animation-delay: 0.6s; }
-.art-rings .ract-2 path:nth-of-type(9) { animation-duration: 3.2s; animation-delay: 1.0s; }
-.art-rings .ract-3 path:nth-of-type(2) { animation-duration: 1.4s; animation-delay: 0.0s; }
-.art-rings .ract-3 path:nth-of-type(3) { animation-duration: 3.0s; animation-delay: 0.4s; }
-.art-rings .ract-3 path:nth-of-type(5) { animation-duration: 2.6s; animation-delay: 0.3s; }
-.art-rings .ract-3 path:nth-of-type(6) { animation-duration: 1.8s; animation-delay: 0.7s; }
-.art-rings .ract-3 path:nth-of-type(8) { animation-duration: 3.6s; animation-delay: 0.6s; }
-.art-rings .ract-3 path:nth-of-type(9) { animation-duration: 4.4s; animation-delay: 1.0s; }
-.art-rings .ract-4 path:nth-of-type(2) { animation-duration: 1.8s; animation-delay: 0.0s; }
-.art-rings .ract-4 path:nth-of-type(3) { animation-duration: 4.6s; animation-delay: 0.4s; }
-.art-rings .ract-4 path:nth-of-type(5) { animation-duration: 3.0s; animation-delay: 0.3s; }
-.art-rings .ract-4 path:nth-of-type(6) { animation-duration: 2.2s; animation-delay: 0.7s; }
-.art-rings .ract-4 path:nth-of-type(8) { animation-duration: 4.2s; animation-delay: 0.6s; }
-.art-rings .ract-4 path:nth-of-type(9) { animation-duration: 5.6s; animation-delay: 1.0s; }
-.art-rings .ract-4 path:nth-of-type(11) { animation-duration: 2.4s; animation-delay: 0.9s; }
-.art-rings .ract-4 path:nth-of-type(12) { animation-duration: 3.6s; animation-delay: 1.3s; }
-.art-rings .ract-4 path:nth-of-type(14) { animation-duration: 5.0s; animation-delay: 1.2s; }
-.art-rings .ract-4 path:nth-of-type(15) { animation-duration: 2.8s; animation-delay: 1.6s; }
+.art-rings .ract-2 path:nth-of-type(2) { animation-duration: 2.6s; animation-delay: -0.4s; }
+.art-rings .ract-2 path:nth-of-type(3) { animation-duration: 4.1s; animation-delay: -2.9s; }
+.art-rings .ract-2 path:nth-of-type(5) { animation-duration: 3.3s; animation-delay: -1.7s; }
+.art-rings .ract-2 path:nth-of-type(6) { animation-duration: 2.9s; animation-delay: -0.2s; }
+.art-rings .ract-2 path:nth-of-type(8) { animation-duration: 4.7s; animation-delay: -3.1s; }
+.art-rings .ract-2 path:nth-of-type(9) { animation-duration: 3.7s; animation-delay: -1.1s; }
+.art-rings .ract-3 path:nth-of-type(2) { animation-duration: 3.9s; animation-delay: -0.9s; }
+.art-rings .ract-3 path:nth-of-type(3) { animation-duration: 5.3s; animation-delay: -3.8s; }
+.art-rings .ract-3 path:nth-of-type(5) { animation-duration: 5.9s; animation-delay: -4.4s; }
+.art-rings .ract-3 path:nth-of-type(6) { animation-duration: 4.3s; animation-delay: -0.6s; }
+.art-rings .ract-3 path:nth-of-type(8) { animation-duration: 4.6s; animation-delay: -2.2s; }
+.art-rings .ract-3 path:nth-of-type(9) { animation-duration: 6.7s; animation-delay: -5.1s; }
+.art-rings .ract-4 path:nth-of-type(2) { animation-duration: 5.2s; animation-delay: -1.3s; }
+.art-rings .ract-4 path:nth-of-type(3) { animation-duration: 7.9s; animation-delay: -6.0s; }
+.art-rings .ract-4 path:nth-of-type(5) { animation-duration: 7.1s; animation-delay: -4.9s; }
+.art-rings .ract-4 path:nth-of-type(6) { animation-duration: 5.8s; animation-delay: -0.7s; }
+.art-rings .ract-4 path:nth-of-type(8) { animation-duration: 6.3s; animation-delay: -3.6s; }
+.art-rings .ract-4 path:nth-of-type(9) { animation-duration: 8.6s; animation-delay: -2.4s; }
+.art-rings .ract-4 path:nth-of-type(11) { animation-duration: 8.2s; animation-delay: -7.0s; }
+.art-rings .ract-4 path:nth-of-type(12) { animation-duration: 6.9s; animation-delay: -4.1s; }
+.art-rings .ract-4 path:nth-of-type(14) { animation-duration: 5.6s; animation-delay: -0.2s; }
+.art-rings .ract-4 path:nth-of-type(15) { animation-duration: 9.3s; animation-delay: -5.5s; }
 @keyframes r-pulse {
   0% { stroke-dashoffset: 0; opacity: 0; }
-  10%, 85% { opacity: 1; }
-  100% { stroke-dashoffset: -100; opacity: 0; }
+  4%, 34% { opacity: 1; }
+  40%, 100% { stroke-dashoffset: -100; opacity: 0; }
 }
 .feature-intranet:has(.rings li:hover) .ract,
 .feature-intranet:has(.rings li:hover) .rings li::before { animation: none; opacity: 0; }
